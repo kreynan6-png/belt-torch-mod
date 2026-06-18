@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "belttorch",
+  "version": "1.0.0",
+  "name": "Belt Torch",
+  "description": "Pasang torch/lantern di belt - tangan bebas pakai shield! (Tekan B)",
+  "authors": ["custom"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.belttorch.BeltTorchMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.0",
+    "fabric-api": "*",
+    "minecraft": ">=26.1"
+  }
+}
