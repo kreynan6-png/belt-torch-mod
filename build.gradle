@@ -1,6 +1,5 @@
 plugins {
-    id 'net.fabricmc.fabric-loom' version "${loom_version}"
-    id 'maven-publish'
+    id 'net.fabricmc.fabric-loom' version '1.15-SNAPSHOT'
 }
 
 version = project.mod_version
@@ -12,28 +11,19 @@ base {
 
 repositories {
     maven { url 'https://maven.fabricmc.net/' }
-    maven { url 'https://api.modrinth.com/maven' }
-}
-
-loom {
-    // Minecraft 26.1+ uses official Mojang mappings, no yarn needed
 }
 
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    // No mappings line - 26.1+ is unobfuscated
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 }
 
 java {
     sourceCompatibility = JavaVersion.VERSION_21
     targetCompatibility = JavaVersion.VERSION_21
-    withSourcesJar()
 }
 
-jar {
-    from("LICENSE") {
-        rename { "${it}_${project.base.archivesName.get()}"}
-    }
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 21
 }
