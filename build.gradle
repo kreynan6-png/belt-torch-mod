@@ -1,5 +1,5 @@
 plugins {
-    id 'net.fabricmc.fabric-loom' version '1.15-SNAPSHOT'
+    id 'fabric-loom' version '1.15-SNAPSHOT'
 }
 
 version = project.mod_version
@@ -7,10 +7,6 @@ group = project.maven_group
 
 base {
     archivesName = project.archives_base_name
-}
-
-repositories {
-    maven { url 'https://maven.fabricmc.net/' }
 }
 
 dependencies {
