@@ -19,7 +19,7 @@ jobs:
       - name: Install Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: 'current'
+          gradle-version: '9.4.0'
 
       - name: Build mod
         run: gradle build
